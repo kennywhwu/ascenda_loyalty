@@ -28,15 +28,10 @@ The Hotel Merge App cleans and merges hotel data from multiple suppliers with an
 
 ## Running the Application
 
-1. Navigate to the hotel_merge_app directory:
+4. Run the Flask application (may need to ensure PYTHONPATH includes root directory of project):
 
   ```bash
-  cd ascenda_loyalty
-  ```
-
-2. Run the Flask application:
-
-  ```bash
+  export PYTHONPATH=$(pwd)
   python app/main.py
   ```
 
@@ -46,11 +41,10 @@ The application will be running at http://127.0.0.1:5000.
 
 `GET /hotels`
 
-Fetches merged hotel data based on the provided filters.
-
-### Request Parameters
+Fetches merged hotel data based on the provided request parameters as filters:
 
 destination (optional): Filter by destination ID.
+
 hotels (optional): Filter by a list of hotel IDs.
 
 If both destination and hotels parameters are passed, the filtering logic applies tighter exclusion on hotel ids.  If there are no hotels that satisfy both parameters, then no hotels will be returned.
