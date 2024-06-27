@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/hotels', methods=['GET'])
 def get_hotels():
-    destination = int(request.args.get('destination'))
+    destination = request.args.get('destination')
     hotel_ids = request.args.getlist('hotels')
 
     suppliers = {

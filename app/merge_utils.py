@@ -6,7 +6,7 @@ def merge_hotels(suppliers_data, destination_id=None, hotel_ids=None):
     for hotels in suppliers_data.values():
         for hotel in hotels:
             # Skip hotels that do not match with passed in destination id or hotel id (prioritize hotel id filter)
-            if (hotel_ids and hotel.id not in hotel_ids) or (destination_id and hotel.destination_id != destination_id):
+            if (hotel_ids and hotel.id not in hotel_ids) or (destination_id and hotel.destination_id != int(destination_id)):
                 continue
             if hotel.id not in merged_hotels:
                 merged_hotels[hotel.id] = hotel
